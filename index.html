@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <!-- Importing the Anton font directly from Google Fonts -->
+    <title>Evan Duncan - Coming Soon</title>
+    <!-- Importing heavy impact and clean fonts based on your design style -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -16,54 +16,111 @@
             padding: 0;
         }
         body {
-            /* Sets the global font to Anton */
-            font-family: 'Anton', sans-serif;
-            background: linear-gradient(135deg, #090d16 0%, #111827 100%);
-            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            /* Matches the off-white background of your campaign style */
+            background-color: #FAF6F0; 
+            color: #0B2347; /* Campaign Navy */
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .container {
-            text-align: center;
             padding: 20px;
-            animation: fadeIn 1.2s ease-out;
+        }
+        .wrapper {
+            background-color: #FFFFFF;
+            max-width: 1000px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 20px 40px rgba(11, 35, 71, 0.08);
+            /* Double gold/navy border frame matching the original layout */
+            border: 4px solid #DDB367; 
+            outline: 8px solid #0B2347;
+            margin: 15px;
+        }
+        .content-side {
+            flex: 1.1;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .badge {
+            font-family: 'Anton', sans-serif;
+            color: #DDB367; /* Poster Gold */
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
         }
         h1 {
-            font-size: 6rem; 
-            line-height: 1.1;
+            font-family: 'Anton', sans-serif;
+            font-size: 5.5rem;
+            color: #0B2347; /* Campaign Navy */
+            line-height: 0.95;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
         }
-        h2 {
-            font-size: 4rem;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .slogan-box {
+            background-color: #0B2347;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            align-self: flex-start;
             margin-top: 10px;
-            color: #818cf8; /* Soft blue accent color for the second line */
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .slogan-box h2 {
+            font-family: 'Anton', sans-serif;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        /* Mobile phone optimization */
-        @media (max-width: 600px) {
-            h1 { font-size: 3.5rem; }
-            h2 { font-size: 2.2rem; }
+        .image-side {
+            flex: 0.9;
+            background-color: #0B2347;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        /* Mobile phone layout optimization */
+        @media (max-width: 768px) {
+            .wrapper { flex-direction: column-reverse; margin: 10px; }
+            .content-side { padding: 40px 24px; text-align: center; align-items: center; }
+            h1 { font-size: 3.8rem; }
+            .slogan-box { align-self: center; }
+            .slogan-box h2 { font-size: 1.6rem; }
+            .image-side { height: 400px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Coming Soon</h1>
-        <h2>For OUR Community</h2>
+    <div class="wrapper">
+        <!-- TEXT CONTENT SIDE -->
+        <div class="content-side">
+            <div class="badge">Evan Duncan</div>
+            <h1>Coming Soon...</h1>
+            
+            <div class="slogan-box">
+                <h2>For OUR Community</h2>
+            </div>
+        </div>
+        
+        <!-- HEADSHOT PHOTO SIDE -->
+        <div class="image-side">
+            <!-- This looks for the new headshot image file you upload in Step 2 -->
+            <img src="evan-duncan.jpg" alt="Evan Duncan Headshot">
+        </div>
     </div>
 
 </body>
