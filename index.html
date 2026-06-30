@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <!-- We are importing a premium, clean font called Inter -->
+    <title>Coming Soon</title>
+    <!-- Importing the Anton font directly from Google Fonts -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -16,12 +16,9 @@
             padding: 0;
         }
         body {
-            /* FONT: Changed to 'Inter', a premium tech/startup style font */
-            font-family: 'Inter', sans-serif;
-            
-            /* COLOUR: Change these two hex codes to change your background gradient */
+            /* Sets the global font to Anton */
+            font-family: 'Anton', sans-serif;
             background: linear-gradient(135deg, #090d16 0%, #111827 100%);
-            
             color: #f8fafc;
             display: flex;
             justify-content: center;
@@ -31,60 +28,42 @@
         }
         .container {
             text-align: center;
-            max-width: 800px;
-            padding: 40px 20px;
+            padding: 20px;
             animation: fadeIn 1.2s ease-out;
         }
-        .badge {
-            /* ACCENT COLOUR: Change #6366f1 to change the tiny badge outline color */
-            background: rgba(99, 102, 241, 0.1);
-            color: #818cf8;
-            padding: 8px 20px;
-            border-radius: 50px;
-            
-            /* SIZE: Made the "Under Construction" badge text larger */
-            font-size: 1.1rem; 
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 32px;
-            border: 2px solid rgba(99, 102, 241, 0.4);
-        }
         h1 {
-            /* SIZE: Boosted text size from 3.5rem to massive 5rem */
-            font-size: 5rem; 
-            font-weight: 900;
+            font-size: 6rem; 
             line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -2px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             background: linear-gradient(to right, #ffffff, #94a3b8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        p {
-            font-size: 1.4rem;
-            color: #94a3b8;
-            line-height: 1.6;
+        h2 {
+            font-size: 4rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            color: #818cf8; /* Soft blue accent color for the second line */
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* This ensures it looks great on mobile phones too */
+        /* Mobile phone optimization */
         @media (max-width: 600px) {
-            h1 { font-size: 3rem; }
-            .badge { font-size: 0.9rem; }
-            p { font-size: 1.1rem; }
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <span class="badge">Under Construction</span>
-        <h1>Something exciting is on the way</h1>
-        <p>Our website is currently under development.</p>
+        <h1>Coming Soon</h1>
+        <h2>For OUR Community</h2>
     </div>
 
 </body>
