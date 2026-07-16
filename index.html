@@ -1,127 +1,776 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evan Duncan - Coming Soon</title>
-    <!-- Importing heavy impact and clean fonts based on your design style -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            /* Matches the off-white background of your campaign style */
-            background-color: #FAF6F0; 
-            color: #0B2347; /* Campaign Navy */
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .wrapper {
-            background-color: #FFFFFF;
-            max-width: 1000px;
-            width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            box-shadow: 0 20px 40px rgba(11, 35, 71, 0.08);
-            /* Double gold/navy border frame matching the original layout */
-            border: 4px solid #DDB367; 
-            outline: 8px solid #0B2347;
-            margin: 15px;
-        }
-        .content-side {
-            flex: 1.1;
-            padding: 60px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .badge {
-            font-family: 'Anton', sans-serif;
-            color: #DDB367; /* Poster Gold */
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-        }
-        h1 {
-            font-family: 'Anton', sans-serif;
-            font-size: 3.5rem;
-            color: #0B2347; /* Campaign Navy */
-            line-height: 0.95;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-            letter-spacing: 1px;
-        }
-        .slogan-box {
-            background-color: #0B2347;
-            color: #FFFFFF;
-            padding: 12px 20px;
-            border-radius: 4px;
-            display: inline-block;
-            align-self: flex-start;
-            margin-top: 10px;
-        }
-        .slogan-box h2 {
-            font-family: 'Anton', sans-serif;
-            font-size: 2.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .image-side {
-            flex: 0.9;
-            background-color: #0B2347;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .image-side img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        /* Mobile phone layout optimization */
-        @media (max-width: 768px) {
-            .wrapper { flex-direction: column-reverse; margin: 10px; }
-            .content-side { padding: 40px 24px; text-align: center; align-items: center; }
-            h1 { font-size: 2.5rem; }
-            .slogan-box { align-self: center; }
-            .slogan-box h2 { font-size: 1.6rem; }
-            .image-side { height: 400px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Re-elect Evan Duncan for City Councillor in Charleswood-Tuxedo-Westwood. Request a lawn sign, volunteer, or donate to the campaign.">
+  <title>Re-Elect Evan Duncan | For OUR Community</title>
+
+  <style>
+    :root {
+      --navy: #06174f;
+      --navy-dark: #031037;
+      --orange: #f4510b;
+      --cream: #f8f1e9;
+      --white: #ffffff;
+      --gold: #dfa63f;
+      --text: #17213b;
+      --muted: #5a6275;
+      --border: #d8dbe4;
+      --shadow: 0 14px 35px rgba(6, 23, 79, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(6, 23, 79, 0.98);
+      border-bottom: 4px solid var(--orange);
+    }
+
+    .nav-wrap {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--orange);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 10px 13px;
+      border-radius: 6px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    nav .donate-link {
+      background: var(--orange);
+    }
+
+    .hero {
+      padding: 56px 0 46px;
+      background:
+        linear-gradient(rgba(248, 241, 233, 0.91), rgba(248, 241, 233, 0.96)),
+        url("campaign-sign.jpg") center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--orange);
+      font-size: clamp(1.2rem, 3vw, 2.2rem);
+      font-style: italic;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(3.1rem, 8vw, 6.6rem);
+      line-height: 0.86;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      display: inline-block;
+      margin: 24px 0 8px;
+      padding: 10px 18px;
+      color: var(--white);
+      background: var(--navy);
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .coming-soon {
+      margin: 18px 0 26px;
+      max-width: 650px;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 0;
+      border-radius: 6px;
+      padding: 14px 22px;
+      font: inherit;
+      font-weight: 900;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .button:hover,
+    .button:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(6, 23, 79, 0.18);
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: var(--orange);
+    }
+
+    .button-secondary {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .sign-image {
+      width: 100%;
+      display: block;
+      border: 5px solid var(--navy);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    main section {
+      padding: 72px 0;
+    }
+
+    .section-white {
+      background: var(--white);
+    }
+
+    .section-navy {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .section-navy .section-heading h2 {
+      color: var(--white);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .section-navy .section-heading p {
+      color: #e5e9f4;
+    }
+
+    .delivery-note {
+      margin: 18px auto 0;
+      max-width: 650px;
+      padding: 14px 18px;
+      border-left: 5px solid var(--orange);
+      background: #fff5f3;
+      color: var(--navy);
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .form-card {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 30px;
+      background: var(--white);
+      border-top: 7px solid var(--orange);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      color: var(--text);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 19px;
+    }
+
+    .field-full {
+      grid-column: 1 / -1;
+    }
+
+    label,
+    legend {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 12px;
+      border: 1px solid #aeb5c5;
+      border-radius: 5px;
+      background: var(--white);
+      color: var(--text);
+      font: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid rgba(244, 81, 11, 0.18);
+      border-color: var(--orange);
+    }
+
+    fieldset {
+      margin: 4px 0 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 20px;
+    }
+
+    .checkbox-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .checkbox-option input {
+      width: 18px;
+      min-height: 18px;
+      height: 18px;
+      margin-top: 3px;
+      flex: 0 0 auto;
+    }
+
+    .consent {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .form-card .button {
+      width: 100%;
+      font-size: 1.05rem;
+    }
+
+    .donate-panel {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 42px 30px;
+      text-align: center;
+      border: 2px solid rgba(255, 255, 255, 0.22);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .donate-panel h2 {
+      margin-top: 0;
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
+      text-transform: uppercase;
+    }
+
+    .donate-panel p {
+      max-width: 650px;
+      margin: 0 auto 24px;
+      font-size: 1.12rem;
+    }
+
+
+    .rebate-card {
+      margin-top: 34px;
+      padding: 28px;
+      background: var(--white);
+      color: var(--text);
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .rebate-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .rebate-card > p {
+      margin: 0 auto 22px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 0 0 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 520px;
+    }
+
+    th,
+    td {
+      padding: 13px 15px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    th {
+      color: var(--white);
+      background: var(--navy);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f7f7f9;
+    }
+
+    td:first-child {
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .donation-fine-print {
+      padding-top: 4px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .donation-fine-print p {
+      margin: 7px 0;
+    }
+
+    .donation-fine-print ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .donation-fine-print li {
+      margin-bottom: 5px;
+    }
+
+    .calculation-note {
+      font-style: italic;
+    }
+
+    footer {
+      padding: 32px 0;
+      background: var(--navy-dark);
+      color: var(--white);
+      text-align: center;
+      border-top: 4px solid var(--orange);
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    .authorization {
+      font-size: 0.78rem;
+      opacity: 0.9;
+      text-transform: uppercase;
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        position: static;
+      }
+
+      .nav-wrap,
+      nav {
+        justify-content: center;
+      }
+
+      .nav-wrap {
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .coming-soon {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .form-grid,
+      .checkbox-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field-full {
+        grid-column: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-    <div class="wrapper">
-        <!-- TEXT CONTENT SIDE -->
-        <div class="content-side">
-            <div class="badge">Re-Elect Evan Duncan</div>
-            <h1>Site Coming Soon...</h1>
-            
-            <div class="slogan-box">
-                <h2>For OUR Community</h2>
-            </div>
-        </div>
-        
-        <!-- HEADSHOT PHOTO SIDE -->
-        <div class="image-side">
-            <!-- This looks for the new headshot image file you upload in Step 2 -->
-            <img src="evan-duncan.jpg" alt="Evan Duncan Headshot">
-        </div>
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="#top"><span>RE-ELECT</span> EVAN DUNCAN</a>
+      <nav aria-label="Main navigation">
+        <a href="#sign">Lawn Sign</a>
+        <a href="#volunteer">Volunteer</a>
+        <a class="donate-link" href="https://donate.stripe.com/eVqaEX24y63Rbsxeq80Ny01" target="_blank" rel="noopener noreferrer">Donate</a>
+      </nav>
     </div>
+  </header>
 
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Re-Elect Evan</p>
+          <h1>Duncan</h1>
+          <p class="hero-subtitle">For OUR Community</p>
+          <p class="coming-soon">
+            <strong>Full Campaign Launch Coming Soon.</strong><br>
+            Until then, there are three ways you can get involved today.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#sign">Show Your Support</a>
+            <a class="button button-secondary" href="#volunteer">Volunteer</a>
+            <a class="button button-secondary"
+               href="https://donate.stripe.com/eVqaEX24y63Rbsxeq80Ny01"
+               target="_blank"
+               rel="noopener noreferrer">Donate</a>
+          </div>
+        </div>
+
+        <div>
+          <img class="sign-image" src="campaign-sign.jpg" alt="Re-elect Evan Duncan campaign sign">
+        </div>
+      </div>
+    </section>
+
+    <section id="sign" class="section-white">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Show Your Support</h2>
+          <p><strong>Sign up now to make sure you receive an Evan Duncan lawn sign.</strong></p>
+          <div class="delivery-note">
+            Lawn sign delivery begins August 26, 2026.
+          </div>
+        </div>
+
+        <!-- Replace YOUR_SUPPORT_FORM_ID below with the Formspree form ID for lawn-sign requests. -->
+        <form class="form-card" action="https://formspree.io/f/mzdndlgw" method="POST">
+          <input type="hidden" name="_subject" value="New Evan Duncan lawn sign request">
+          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+
+          <div class="form-grid">
+            <div>
+              <label for="sign-first-name">First name</label>
+              <input id="sign-first-name" name="First name" type="text" autocomplete="given-name" required>
+            </div>
+
+            <div>
+              <label for="sign-last-name">Last name</label>
+              <input id="sign-last-name" name="Last name" type="text" autocomplete="family-name" required>
+            </div>
+
+            <div class="field-full">
+              <label for="sign-address">Home address</label>
+              <input id="sign-address" name="Home address" type="text" autocomplete="street-address" required>
+            </div>
+
+            <div>
+              <label for="sign-email">Email</label>
+              <input id="sign-email" name="Email" type="email" autocomplete="email" required>
+            </div>
+
+            <div>
+              <label for="sign-phone">Phone number</label>
+              <input id="sign-phone" name="Phone number" type="tel" autocomplete="tel" required>
+            </div>
+
+            <div class="field-full">
+              <p class="consent">
+                By submitting this form, you consent to the Evan Duncan campaign using the information
+                provided to contact you and coordinate delivery of your lawn sign.
+              </p>
+            </div>
+
+            <div class="field-full">
+              <button class="button button-primary" type="submit">Request My Lawn Sign</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="donate" class="section-navy">
+      <div class="container">
+        <div class="donate-panel">
+          <h2>Donate</h2>
+          <p>
+            Thank you for supporting Evan Duncan's re-election campaign for City Councillor
+            of Charleswood-Tuxedo-Westwood. Together, we're building a stronger future
+            <strong>For OUR Community.</strong>
+          </p>
+
+          <a class="button button-primary"
+             href="https://donate.stripe.com/eVqaEX24y63Rbsxeq80Ny01"
+             target="_blank"
+             rel="noopener noreferrer">
+            Donate to the Campaign
+          </a>
+
+          <div class="rebate-card">
+            <h3>Municipal Campaign Contribution Rebate</h3>
+            <p>
+              Eligible contributors may apply to the City of Winnipeg for a partial rebate.
+              Here are some examples:
+            </p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Your donation</th>
+                    <th scope="col">Potential rebate</th>
+                    <th scope="col">Estimated net cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>$25</td><td>$18.75</td><td>$6.25</td></tr>
+                  <tr><td>$50</td><td>$37.50</td><td>$12.50</td></tr>
+                  <tr><td>$100</td><td>$75.00</td><td>$25.00</td></tr>
+                  <tr><td>$250</td><td>$187.50</td><td>$62.50</td></tr>
+                  <tr><td>$300</td><td>$225.00</td><td>$75.00</td></tr>
+                  <tr><td>$500</td><td>$325.00</td><td>$175.00</td></tr>
+                  <tr><td>$750</td><td>$450.00</td><td>$300.00</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="donation-fine-print">
+              <p><strong>Important contribution information:</strong></p>
+              <ul>
+                <li>Only individuals who are residents of Manitoba may contribute.</li>
+                <li>Contributions must be made using the contributor's own funds.</li>
+                <li>Contributions under $25 are not eligible for the City rebate.</li>
+                <li>Campaign contributions are not charitable donations and are not income-tax deductible.</li>
+                <li>
+                  To receive a rebate, the contributor must apply to the City Clerk within
+                  14 months after election day and provide the campaign contribution receipt.
+                </li>
+                <li>
+                  Rebate eligibility and payment are administered by the City of Winnipeg and
+                  remain subject to applicable law, the City's rebate program, and the campaign's
+                  required financial filings.
+                </li>
+              </ul>
+              <p class="calculation-note">
+                Rebate figures are estimates based on the City of Winnipeg's current rebate formula.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="volunteer" class="section-white">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Volunteer</h2>
+          <p>Join the campaign team and help us connect with residents across the ward.</p>
+        </div>
+
+        <!-- Replace YOUR_VOLUNTEER_FORM_ID below with the Formspree form ID for volunteers. -->
+        <form class="form-card" action="https://formspree.io/f/xjgngqow" method="POST">
+          <input type="hidden" name="_subject" value="New Evan Duncan campaign volunteer">
+          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+
+          <div class="form-grid">
+            <div>
+              <label for="volunteer-first-name">First name</label>
+              <input id="volunteer-first-name" name="First name" type="text" autocomplete="given-name" required>
+            </div>
+
+            <div>
+              <label for="volunteer-last-name">Last name</label>
+              <input id="volunteer-last-name" name="Last name" type="text" autocomplete="family-name" required>
+            </div>
+
+            <div class="field-full">
+              <label for="volunteer-address">Home address</label>
+              <input id="volunteer-address" name="Home address" type="text" autocomplete="street-address" required>
+            </div>
+
+            <div>
+              <label for="volunteer-email">Email</label>
+              <input id="volunteer-email" name="Email" type="email" autocomplete="email" required>
+            </div>
+
+            <div>
+              <label for="volunteer-phone">Phone number</label>
+              <input id="volunteer-phone" name="Phone number" type="tel" autocomplete="tel" required>
+            </div>
+
+            <fieldset class="field-full">
+              <legend>How would you like to help? Select all that apply.</legend>
+              <div class="checkbox-grid">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="Volunteer interests" value="Signage">
+                  <span>Signage</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" name="Volunteer interests" value="Door knocking">
+                  <span>Door knocking</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" name="Volunteer interests" value="Events">
+                  <span>Events</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" name="Volunteer interests" value="Fundraising">
+                  <span>Fundraising</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" name="Volunteer interests" value="Wherever you need me">
+                  <span>Wherever you need me</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="field-full">
+              <label for="volunteer-other">Other way you'd like to help</label>
+              <textarea id="volunteer-other"
+                        name="Other volunteer suggestion"
+                        rows="4"
+                        placeholder="Tell us another way you would like to get involved."></textarea>
+            </div>
+
+            <div class="field-full">
+              <p class="consent">
+                By submitting this form, you consent to the Evan Duncan campaign using the information
+                provided to contact you about campaign volunteer opportunities.
+              </p>
+            </div>
+
+            <div class="field-full">
+              <button class="button button-primary" type="submit">Join the Campaign Team</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>RE-ELECT EVAN DUNCAN</strong></p>
+      <p>For OUR Community</p>
+      <p class="authorization">Authorized by the Official Agent for Evan Duncan</p>
+    </div>
+  </footer>
 </body>
 </html>
